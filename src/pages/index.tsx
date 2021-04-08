@@ -1,4 +1,4 @@
-import { Button, Center, Flex, Stack } from '@chakra-ui/react';
+import { Button, Center, Flex, VStack } from '@chakra-ui/react';
 
 import { Input } from '../components';
 
@@ -14,11 +14,11 @@ export default function Home() {
         borderRadius={8}
         flexDir="column"
       >
-        <Stack spacing="4">
+        <VStack spacing="4">
           <Input placeholder="E-mail" name="email" type="email" />
 
           <Input placeholder="Senha" name="password" type="password" />
-        </Stack>
+        </VStack>
 
         <Button type="submit" mt="6" colorScheme="pink" size="lg">
           Entrar

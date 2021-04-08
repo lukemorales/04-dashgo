@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { FiEyeOff, FiEye } from 'react-icons/fi';
 import {
   FormLabel,
+  FormControl,
   Input as ChakraInput,
   InputGroup,
   InputProps,
   Stack,
-  Text,
   InputRightElement,
   IconButton,
 } from '@chakra-ui/react';
@@ -17,17 +17,19 @@ export const Input = (props: InputProps) => {
 
   const { id, type, name, placeholder, ...attrs } = props;
 
+  const inputId = id ?? name;
+
   const handlePasswordVisibility = () =>
     setIsPasswordVisible((prevState) => !prevState);
 
   return (
-    <FormLabel htmlFor={id ?? name}>
+    <FormControl id={inputId}>
       <Stack spacing="1">
-        {placeholder && <Text>{placeholder}</Text>}
+        {placeholder && <FormLabel htmlFor={inputId}>{placeholder}</FormLabel>}
 
-        <InputGroup alignItems="center">
+        <InputGroup>
           <ChakraInput
-            id={id ?? name}
+            id={inputId}
             size="lg"
             name={name}
             type={isPasswordVisible ? 'text' : type}
@@ -53,6 +55,6 @@ export const Input = (props: InputProps) => {
           )}
         </InputGroup>
       </Stack>
-    </FormLabel>
+    </FormControl>
   );
 };
