@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { FiEyeOff, FiEye } from 'react-icons/fi';
+import { RiEyeLine, RiEyeOffLine } from 'react-icons/ri';
 import {
   FormLabel,
   FormControl,
@@ -49,7 +49,7 @@ export const Input = (props: InputProps) => {
                 variant="ghost"
                 colorScheme="darkAlpha"
                 aria-label="Mostrar senha"
-                icon={isPasswordVisible ? <FiEyeOff /> : <FiEye />}
+                icon={isPasswordVisible ? <RiEyeOffLine /> : <RiEyeLine />}
               />
             </InputRightElement>
           )}
